@@ -24,6 +24,7 @@
                 if (
                     $password != $confirm_password || // TODO: Check from the FrontEnd
                     !DataValidation::check_data_length($username, $password) ||
+                    !DataValidation::check_special_characters($username) ||
                     DataValidation::username_exists($username)
                 ) {
                     throw new Exception();
